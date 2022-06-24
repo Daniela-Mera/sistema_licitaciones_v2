@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @estado_licitacion %>
+
+<div>
+  <%= link_to "Edit this estado licitacion", edit_estado_licitacion_path(@estado_licitacion) %> |
+  <%= link_to "Back to estado licitacions", estado_licitacions_path %>
+
+  <%= button_to "Destroy this estado licitacion", @estado_licitacion, method: :delete %>
+</div>

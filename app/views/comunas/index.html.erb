@@ -1,0 +1,26 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Comunas</h1>
+
+<div id="comunas">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Comuna</th>
+        <th scope="col">Acción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @comunas.each do |comuna| %>
+        <tr>
+          <td><%= comuna.id %></td>
+          <td><%= comuna.nombre_comuna %></td>
+          <td><%= link_to "Show", comuna %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= link_to "New comuna", new_comuna_path %>

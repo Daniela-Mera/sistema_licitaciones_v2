@@ -1,0 +1,2 @@
+class EstadoLicitacion < ApplicationRecord
+end

@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @chileregion %>
+
+<div>
+  <%= link_to "Edit this chileregion", edit_chileregion_path(@chileregion) %> |
+  <%= link_to "Back to chileregions", chileregions_path %>
+
+  <%= button_to "Destroy this chileregion", @chileregion, method: :delete %>
+</div>

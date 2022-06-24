@@ -1,0 +1,2 @@
+class Chileregion < ApplicationRecord
+end

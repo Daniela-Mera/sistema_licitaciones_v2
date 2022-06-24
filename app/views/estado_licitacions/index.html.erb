@@ -1,0 +1,28 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Estado licitaciones</h1>
+
+<div id="estado_licitacions">
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Descripcion</th>
+        <th scope="col">Acción</th>       
+      </tr>
+    </thead>
+    <tbody>
+      <% @estado_licitacions.each do |estado_licitacion| %>
+        <tr>
+          <td><%= estado_licitacion.id %></td>
+          <td><%= estado_licitacion.estado %></td>
+          <td><%= estado_licitacion.descripcion %></td>
+          <td><%= link_to "Show", estado_licitacion %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= link_to "New estado licitacion", new_estado_licitacion_path %>

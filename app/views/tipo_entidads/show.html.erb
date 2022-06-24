@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @tipo_entidad %>
+
+<div>
+  <%= link_to "Edit this tipo entidad", edit_tipo_entidad_path(@tipo_entidad) %> |
+  <%= link_to "Back to tipo entidads", tipo_entidads_path %>
+
+  <%= button_to "Destroy this tipo entidad", @tipo_entidad, method: :delete %>
+</div>
