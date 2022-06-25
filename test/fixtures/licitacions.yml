@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombre_proyecto: MyString
+  descripcion: MyString
+  presupuesto: 1
+  duracion_en_meses: 1
+  fecha_de_inicio: 2022-06-24
+  fk_region: MyString
+  fk_estado_licitacion: MyString
+
+two:
+  nombre_proyecto: MyString
+  descripcion: MyString
+  presupuesto: 1
+  duracion_en_meses: 1
+  fecha_de_inicio: 2022-06-24
+  fk_region: MyString
+  fk_estado_licitacion: MyString

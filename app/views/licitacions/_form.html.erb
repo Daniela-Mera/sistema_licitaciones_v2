@@ -1,0 +1,54 @@
+<%= form_with(model: licitacion) do |form| %>
+  <% if licitacion.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(licitacion.errors.count, "error") %> prohibited this licitacion from being saved:</h2>
+
+      <ul>
+        <% licitacion.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :nombre_proyecto, style: "display: block", class:"form-label"  %>
+    <%= form.text_field :nombre_proyecto, autofocus: true, autocomplete: "nombre_proyecto", class:"form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :descripcion, style: "display: block", class:"form-label" %>
+    <%= form.text_field :descripcion, autofocus: true, autocomplete: "descripcion", class:"form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :presupuesto, style: "display: block", class:"form-label" %>
+    <%= form.number_field :presupuesto, autofocus: true, autocomplete: "presupuesto", class:"form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :duracion_en_meses, style: "display: block", class:"form-label" %>
+    <%= form.number_field :duracion_en_meses, autofocus: true, autocomplete: "duracion_en_meses", class:"form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :fecha_de_inicio, style: "display: block", class:"form-label" %>
+    <%= form.date_field :fecha_de_inicio, autofocus: true, autocomplete: "fecha_de_inicio", class:"form-control" %>
+  </div>
+
+  <div>
+    <%= form.label :fk_region, style: "display: block", class:"form-label" %>
+    <!--<%= form.text_field :fk_region %>-->
+    <%= form.collection_select :fk_region, Chileregion.all, :id, :nombre_region %>
+  </div>
+
+  <div>
+    <%= form.label :fk_estado_licitacion, style: "display: block", class:"form-label" %>
+    <!--<%= form.text_field :fk_estado_licitacion %>-->
+    <%= form.collection_select :fk_estado_licitacion, EstadoLicitacion.all, :id, :estado %>
+  </div>
+<br>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

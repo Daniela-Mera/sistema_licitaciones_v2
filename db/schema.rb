@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_24_233359) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_25_025358) do
   create_table "chileregions", force: :cascade do |t|
     t.string "nombre_region"
     t.datetime "created_at", null: false
@@ -26,6 +26,18 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_24_233359) do
   create_table "estado_licitacions", force: :cascade do |t|
     t.string "estado"
     t.string "descripcion"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "licitacions", force: :cascade do |t|
+    t.string "nombre_proyecto"
+    t.string "descripcion"
+    t.integer "presupuesto"
+    t.integer "duracion_en_meses"
+    t.date "fecha_de_inicio"
+    t.string "fk_region"
+    t.string "fk_estado_licitacion"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :licitacions
   devise_for :users
   resources :comunas
   resources :chileregions
