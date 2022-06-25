@@ -5,65 +5,84 @@
 
 
   <div class="row g-3">
+    <!-- Son identicos en new y edit -->
+      <!-- Datos personales -->
+        <div class="col-md-3">
+            <%= f.label :"Rut",class:"form-label" %><br />
+            <%= f.text_field :rut, autofocus: true, autocomplete: "rut", class:"form-control" %>
+        </div>
+        <div class="col-md-9">
+            <%= f.label :"Razon Social",class:"form-label" %><br />
+            <%= f.text_field :razon_social, autofocus: true, autocomplete: "razon_social", class:"form-control" %>
+        </div>
+        <div class="col-md-12">
+            <%= f.label :"Representante Legal",class:"form-label" %><br />
+            <%= f.text_field :representante_legal, autofocus: true, autocomplete: "representante_legal", class:"form-control" %>
+        </div>
 
-    <!-- Datos personales -->
-      <div class="col-md-3">
-          <%= f.label :"Rut",class:"form-label" %><br />
-          <%= f.text_field :rut, autofocus: true, autocomplete: "rut", class:"form-control" %>
-      </div>
-      <div class="col-md-9">
-          <%= f.label :"Razon Social",class:"form-label" %><br />
-          <%= f.text_field :razon_social, autofocus: true, autocomplete: "razon_social", class:"form-control" %>
-      </div>
-      <div class="col-md-12">
-          <%= f.label :"Representante Legal",class:"form-label" %><br />
-          <%= f.text_field :representante_legal, autofocus: true, autocomplete: "representante_legal", class:"form-control" %>
-      </div>
-    <br>
-    <!-- Contacto -->
-      <div class="col-md-3">
-        <%= f.label :"Teléfono",class:"form-label"  %><br />
-        <%= f.email_field :telefono, autofocus: true, autocomplete: "telefono", class:"form-control" %>
-      </div>
-      <div class="col-md-9">
-        <%= f.label :"e-mail",class:"form-label"  %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
-      </div>
+      <br>
+      <!-- Contacto -->
+        <div class="col-md-3">
+          <%= f.label :"Teléfono",class:"form-label"  %><br />
+          <%= f.text_field :telefono, autofocus: true, autocomplete: "telefono", class:"form-control" %>
+        </div>
+        <div class="col-md-9">
+          <%= f.label :"e-mail",class:"form-label"  %><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
+        </div>
 
-    <br>
-    <!-- Direccion -->
-      <div class="col-md-9">
-        <%= f.label :"Calle" ,class:"form-label"%><br />
-        <%= f.text_field :calle, autofocus: true, autocomplete: "calle", class:"form-control" %>
-      </div>
-      <div class="col-md-3">
-        <%= f.label :"Nro.",class:"form-label" %><br />
-        <%= f.text_field :numero, autofocus: true, autocomplete: "numero", class:"form-control" %>
-      </div>
+      <br>
+      <!-- Direccion -->
+        <div class="col-md-9">
+          <%= f.label :"Calle" ,class:"form-label"%><br />
+          <%= f.text_field :calle, autofocus: true, autocomplete: "calle", class:"form-control" %>
+        </div>
+        <div class="col-md-3">
+          <%= f.label :"Nro.",class:"form-label" %><br />
+          <%= f.text_field :numero, autofocus: true, autocomplete: "numero", class:"form-control" %>
+        </div>
+        <!-- Region -->
+          <div class="col-md-6">
+            <%= f.label :"Región",class:"form-label" %><br />
+            <%= f.collection_select :fk_region, Chileregion.all, :id, :nombre_region %><br />    
+          </div>
+        <!-- Comuna -->
+          <div class="col-md-6">
+            <%= f.label :"Comuna",class:"form-label" %><br />
+            <%= f.collection_select :fk_comuna, Comuna.all, :id, :nombre_comuna %><br />    
+          </div> 
 
+
+
+      <br>
+      <!-- Contraseña -->
+        <div class="col-md-6">
+            <%= f.label :"Contraseña" ,class:"form-label"%>
+            <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+            <% end %><br />
+            <%= f.password_field :password, autocomplete: "new-password", class:"form-control" %>
+        </div>
+
+        <div class="col-md-6">
+          <%= f.label :"Confirmar contraseña",class:"form-label" %><br/>
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control" %>
+        </div>
+
+      <br>
+      <!-- Tipo entidad -->
+        <div class="col-md-6">
+          <%= f.label :"Te registras como:", class:"form-label"%><br />
+          <%= f.collection_select :fk_tipo_entidad, TipoEntidad.all, :id, :entidad, class:"form-select"%><br /> 
+        </div>
+        <div class="col-md-6">
+        </div>
       
-    <!-- Tipo entidad -->
-    <br>
-    <!-- Contraseña -->
-      <div class="col-md-6">
-          <%= f.label :"Contraseña" ,class:"form-label"%>
-          <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %> characters minimum)</em>
-          <% end %><br />
-          <%= f.password_field :password, autocomplete: "new-password", class:"form-control" %>
-      </div>
-
-      <div class="col-md-6">
-        <%= f.label :"Confirmar contraseña",class:"form-label" %><br/>
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control" %>
-      </div>
-
     <br>
     <!-- Acciones -->
       <div class="actions">
         <%= f.submit "Sign up" %>
       </div>
-
   </div>
 
 
