@@ -3,6 +3,15 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby "2.7.5"
 
+# Gemas para aplicar conocimientos modulos 8 y 9
+gem 'devise'
+gem 'rest-client'
+gem 'ffi'
+gem 'kaminari'
+gem 'bootstrap'
+gem 'jquery-rails'
+gem 'net-http'
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.3"
 
